@@ -12,7 +12,7 @@ It covers the required steps:
 4. Join sales order tables and apply order transformations into `publish_orders`.
 5. Produce the two requested analytical outputs and persist them as tables.
 
-The submitted requirements explicitly ask for these five deliverables: raw ingestion, typed storage, product transformations, sales order transformations, and two business analysis outputs. This notebook implements all of them. Source requirement summary: fileciteturn0file0
+The submitted requirements explicitly ask for these five deliverables: raw ingestion, typed storage, product transformations, sales order transformations, and two business analysis outputs. This notebook implements all of them.
 
 ## Repository Intent
 
@@ -28,7 +28,7 @@ Default configuration:
 
 ### 1. Data Loading
 
-**Requirement:** Load the three provided files and store them with a `raw_` prefix. fileciteturn0file0
+**Requirement:** Load the three provided files and store them with a `raw_` prefix. 
 
 **Implementation:**
 
@@ -47,7 +47,7 @@ Keeping raw data untyped avoids accidental type coercion during ingestion and pr
 
 ### 2. Data Review and Storage
 
-**Requirement:** Review data, assign data types, identify primary/foreign keys, and store transformed tables using a `store_` prefix. fileciteturn0file0
+**Requirement:** Review data, assign data types, identify primary/foreign keys, and store transformed tables using a `store_` prefix. 
 
 **Implementation:**
 
@@ -83,7 +83,7 @@ Keeping raw data untyped avoids accidental type coercion during ingestion and pr
 
 ### 3. Product Master Transformations
 
-**Requirement:** Build `publish_product` with two rules: replace null `Color` with `N/A`, and derive missing `ProductCategoryName` from `ProductSubCategoryName` using the specified mapping rules. fileciteturn0file0
+**Requirement:** Build `publish_product` with two rules: replace null `Color` with `N/A`, and derive missing `ProductCategoryName` from `ProductSubCategoryName` using the specified mapping rules. 
 
 **Implementation:**
 
@@ -100,7 +100,7 @@ This section matches the product transformation rules exactly.
 
 ### 4. Sales Order Transformations
 
-**Requirement:** Join SalesOrderDetail and SalesOrderHeader on `SalesOrderID`, calculate business-day lead time, calculate total line extended price, and create `publish_orders` with all detail columns plus all header columns except `SalesOrderID` while renaming `Freight` to `TotalOrderFreight`. fileciteturn0file0
+**Requirement:** Join SalesOrderDetail and SalesOrderHeader on `SalesOrderID`, calculate business-day lead time, calculate total line extended price, and create `publish_orders` with all detail columns plus all header columns except `SalesOrderID` while renaming `Freight` to `TotalOrderFreight`.
 
 **Implementation:**
 
@@ -124,7 +124,7 @@ The lead-time logic counts weekdays in the range `[OrderDate, ShipDate)`, which 
 
 ### 5. Analysis Questions
 
-**Requirement:** Answer two questions based on transformed data. fileciteturn0file0
+**Requirement:** Answer two questions based on transformed data. 
 
 **Implementation:**
 
